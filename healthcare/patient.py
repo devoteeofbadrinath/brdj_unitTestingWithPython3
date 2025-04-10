@@ -11,7 +11,7 @@ class Patient:
         days = set()
         for prescription in prescriptions:
             days.update(prescription.days_taken())
-            return days
+        return days
 
     def clash(self, medicine_names):
         days_taking = [self.days_taking(medicine_name)
