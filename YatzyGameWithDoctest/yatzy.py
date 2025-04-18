@@ -241,7 +241,7 @@ def dice_counts(dice):
     ...
     TypeError: count() argument 1 must be str, not int
 
-    >>> dice_counts("12345")  #doctest: +IGNORE_EXCEPTION_DETAIL
+    >>> dice_counts("12345") #doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
     ...
     TypeError:  Can't convert 'int' object to str implicitly
@@ -255,14 +255,13 @@ def scores_in_categories(dice, categories=(yatzy, full_house, four_of_a_kind, th
                                            chance)):
     """Score the dice in each category and return those with a non-zero score.
 
-    >>> scores_in_categories([1, 1, 2, 2, 2], (ones, twos, threes, full_house, three_of_a_kind)) #doctest + ELLIPSIS
+    >>> scores_in_categories([1, 1, 2, 2, 2], (ones, twos, threes, full_house, three_of_a_kind)) #doctest +ELLIPSIS
     [(8, <function full_house at 0x...>), (6, <function twos at 0x...>), (6, <function three_of_a_kind at 0x...>), (2, <function ones at 0x...>), (0, <function threes at 0x...>)]
 
-    >>> scores = scores_in_categories([1, 1, 2, 2, 2], (ones, twos, threes, full_house, three_of_a_kind, two_pairs)) #doctest + ELLIPSIS
-    >>> [(score, category.__name__) for (score, category) in scores]
+    >>> scores = scores_in_categories([1, 1, 2, 2, 2], (ones, twos, threes, full_house, three_of_a_kind, two_pairs)) #doctest +ELLIPSIS
+    >>> [(score, category.__name__) for (score, category) in scores] #doctest +ELLIPSIS
     [(8, 'full_house'), (6, 'twos'), (6, 'three_of_a_kind'), (6, 'two_pairs'), (2, 'ones'), (0, 'threes')]
 
-    [(8, <function full_house at 0x...>), (6, <function twos at 0x...>), (6, <function three_of_a_kind at 0x...>), (2, <function ones at 0x...>), (0, <function threes at 0x...>)]
 
     """
     scores = [(category(dice), category)

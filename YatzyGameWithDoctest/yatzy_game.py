@@ -1,6 +1,30 @@
 
 import random
 
+from yatzy import *
+
+
+def play_yatzy():
+    """
+    Play an interactive game of Yatzy on the command line
+    """
+    available_categories = [yatzy, full_house, four_of_a_kind, three_of_a_kind, two_pairs,
+                            small_straight, large_straight,
+                            ones, twos, threes, fours, fives, sixes,
+                            chance]
+    play_yatzy_with_categories(available_categories)
+
+
+def play_yatzy_with_categories(available_categories, input_source=input):
+    """
+    Play an interactive game of Yatzy on the command line,
+    with only the given categories available
+
+    :para, available_categories: list of category functions.
+    Each function takes a list of dice integers, and returns an integer score
+
+    """
+
 
 def roll(number_of_dice=5):
     """
