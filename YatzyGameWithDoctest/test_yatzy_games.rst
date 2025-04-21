@@ -5,5 +5,29 @@ Yatzy Game
 You can use this code to play Yatzy. A whole game with all 14 categories
 is quite long. Here you can see a full game played with only two categories.
 
+>>> from yatzy_game import *
+>>> random.seed(1234)
+>>> import functools
+>>> stub_input = functools.partial(next, iter(["4,5", "6", "ones", "1,1,1,3", "1,1,3,6", "twos" ]))
+>>> play_yatzy_with_categories([ones, twos], input_source=stub_input)
+Your roll is:
+[1, 1, 1, 4, 5]
+[1, 1, 1, 1, 6]
+[1, 1, 1, 1, 6]
+Hint: available categories and scores:
+[(4, 'ones'), (0, 'twos')]
+Your score is now 4
+Your roll is:
+[1, 1, 1, 2, 3]
+[1, 1, 2, 3, 6]
+[2, 4, 4, 5, 5]
+Hint: available categories and scores:
+[(2, 'twos')]
+Your score is now 6
+ones:       4
+twos:       2
+<BLANKLINE>
+Final Score: 6
+
 
 
