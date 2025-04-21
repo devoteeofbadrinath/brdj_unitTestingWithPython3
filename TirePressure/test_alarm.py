@@ -1,3 +1,6 @@
+from unittest.mock import Mock
+
+from TirePressure.sensor import Sensor
 from alarm import Alarm
 
 
@@ -15,3 +18,11 @@ def test_low_pressure_activates_alarm():
     alarm = Alarm(sensor=StubSensor())
     alarm.check()
     assert alarm.is_alarm_on
+
+
+def test_normal_pressure_alarm_stays_off():
+    stub_sensor = Mock(Sensor)
+    stub_sensor.sample_pressure.return_value = 18
+    alarm = Alarm(stub_sensor)
+    alarm.check()
+    assert not alarm.is_alarm_on
