@@ -11,7 +11,7 @@ class Alarm:
 
     def check(self):
         pressure = self._sensor.sample_pressure()
-        if pressure > self._low_pressure_threshold \
+        if pressure < self._low_pressure_threshold \
                 or self._high_pressure_threshold < pressure:
             self._is_alarm_on = True
 
