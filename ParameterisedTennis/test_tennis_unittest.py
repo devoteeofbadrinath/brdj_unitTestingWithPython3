@@ -7,9 +7,8 @@ class TennisTest(unittest.TestCase):
     def test_score_tennis(self):
         test_cases = [
             (0, 0, "Love-All"),
-            (2, 1, "Fifteen-All"),
+            (1, 1, "Fifteen-All"),
             (2, 2, "Thirty-All"),
-            #(4, 2, "Thirty-All"),
         ]
         for player1_points, player2_points, expected_score in test_cases:
             with self.subTest(f"{player1_points}, {player2_points} -> {expected_score}"):
