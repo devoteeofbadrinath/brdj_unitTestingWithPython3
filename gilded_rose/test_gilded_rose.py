@@ -2,8 +2,7 @@ import csv
 
 import pytest
 
-from glided_rose_1 import GlidedRose, Item
-
+from gilded_rose import Item, GildedRose
 
 def read_items():
     cases = []
@@ -25,7 +24,7 @@ def read_items():
                          read_items())
 def test_updated_items(name, sell_in, quality, expected_sell_in, expected_quality):
     item = Item(name, sell_in, quality)
-    gr = GlidedRose([item])
+    gr = GildedRose([item])
     gr.update_quality()
     assert item.sell_in == expected_sell_in
     assert item.quality == expected_quality
